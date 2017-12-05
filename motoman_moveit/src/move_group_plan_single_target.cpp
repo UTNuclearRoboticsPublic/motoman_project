@@ -24,9 +24,9 @@ int main(int argc, char **argv)
     goal.orientation.y = 0;
     goal.orientation.z = 0;
     goal.orientation.w = 1;
-    goal.position.x = 0.5;
-    goal.position.y = 0.3;
-    goal.position.z = 0.5;
+    goal.position.x = 0.22;
+    goal.position.y = 0.15;
+    goal.position.z = 0.06;
 
     // Set the tolerance to consider the goal achieved
     plan_group.setGoalTolerance(0.2);
@@ -64,7 +64,6 @@ int main(int argc, char **argv)
 
     // Set the target pose, which is the goal we already defined
     plan_group.setPoseTarget(goal);
-
     // Perform the planning step, and if it succeeds display the current
     // arm trajectory and move the arm
     moveit::planning_interface::MoveGroup::Plan goal_plan2;
@@ -78,7 +77,7 @@ int main(int argc, char **argv)
         sleep(5.0);
 
         plan_group.move();
-    } 
+    }
     ros::shutdown();
 
     return 0;
