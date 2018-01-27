@@ -82,9 +82,6 @@ before_install:
   - sudo apt-get install -y libopencv-dev python-opencv
   # Arduino Makefile
   - sudo apt-get install -y arduino-mk screen
-  # install libassimp3
-  - wget http://security.ubuntu.com/ubuntu/pool/universe/a/assimp/libassimp3_3.0~dfsg-2_amd64.deb
-  - sudo dpkg -i libassimp3_3.0~dfsg-2_amd64.deb
   # Prepare rosdep to install dependencies.
   - sudo rosdep init
   - rosdep update
