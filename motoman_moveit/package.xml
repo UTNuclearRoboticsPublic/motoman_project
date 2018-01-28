@@ -16,7 +16,6 @@
   <run_depend>moveit_commander</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>rviz</run_depend>
-  <run_depend>motoman_sia5_moveit_config</run_depend>
 
   <build_depend>roscpp</build_depend>
   <build_depend>moveit_msgs</build_depend>
