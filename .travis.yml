@@ -19,6 +19,7 @@ env:
     - UPSTREAM_WORKSPACE=file
     - ROSINSTALL_FILENAME=.indigo_depends.rosinstall
     - BEFORE_SCRIPT='./.pre_process.sh'
+    - TARGET_PKGS=`catkin_topological_order $CATKIN_WORKSPACE/src --only-names`
   matrix:		
     - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu 
 install:		
