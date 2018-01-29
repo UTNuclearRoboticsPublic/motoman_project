@@ -14,4 +14,5 @@
   <run_depend>gazebo_ros</run_depend>
   <run_depend>motoman_control</run_depend>
   <run_depend>motoman_point_cloud</run_depend>
+  <run_depend>motoman_description</run_depend>
 </package>
