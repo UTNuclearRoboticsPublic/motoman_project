@@ -11,7 +11,7 @@ notifications:
   email:
     on_success: never
     on_failue: never
-  slack: nishida-lab:Sczvu4bdpbngcXGeiZAEdHGx
+  # slack: nishida-lab:Sczvu4bdpbngcXGeiZAEdHGx
 env:		
   global:		
     - CATKIN_PARALLEL_TEST_JOBS=-p1		
@@ -23,6 +23,6 @@ env:
   matrix:		
     - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu 
 install:		
-  - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config		
+  - git clone -b add-source https://github.com/MoriKen254/industrial_ci.git .ci_config
 script:		
   - source .ci_config/travis.sh 
