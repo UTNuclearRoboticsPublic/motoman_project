@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(motion_planning)
+set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  moveit_msgs
+  moveit_commander
+  moveit_core
+  moveit_ros_planning
+  moveit_ros_planning_interface
+  pluginlib
+  std_msgs
+  message_generation
+  cmake_modules)
+find_package(Boost REQUIRED system filesystem date_time thread)
+find_package(Eigen REQUIRED)
+
+include_directories(SYSTEM ${Boost_INCLUDE_DIR} ${EIGEN_INCLUDE_DIRS})
+include_directories(include ${catkin_INCLUDE_DIRS})
+link_directories(${catkin_LIBRARY_DIRS})
+
+## Generate messages in the 'msg' folder
+add_message_files(
+  FILES
+  Servo_move.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
+
+catkin_package(
+  CATKIN_DEPENDS
+    moveit_core
+    moveit_ros_planning_interface
+)
+
+add_executable(motion_planning src/moving.cpp)
+target_link_libraries(motion_planning ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(demo_teaching src/demo_teaching.cpp)
+target_link_libraries(demo_teaching ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(single_target src/single_target.cpp)
+target_link_libraries(single_target ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+add_executable(demo_teaching_single src/demo_teaching_single.cpp)
+target_link_libraries(demo_teaching_single ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
