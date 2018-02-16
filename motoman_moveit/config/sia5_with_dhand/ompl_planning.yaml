@@ -54,7 +54,12 @@ planner_configs:
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability? default: 0.05
     radius: 5.5
-    expand_rate : 0.005
+    resolution : 0.005
+  RRTConnectEstimatekConfigDefault:
+    type: geometric::RRTConnectEstimate
+    range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    radius: 5.5
+    resolution: 0.005
   PRMkConfigDefault:
     type: geometric::PRM
     max_nearest_neighbors: 10  # use k nearest neighbors. default: 10
@@ -73,6 +78,7 @@ arm:
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
   projection_evaluator: joints(joint_s,joint_l)
@@ -90,5 +96,6 @@ gripper:
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault

@@ -36,7 +36,12 @@ planner_configs:
     range: 0.0
     goal_bias: 0.05
     radius: 5.5
-    expand_rate: 0.005
+    resolution: 0.005
+  RRTConnectEstimatekConfigDefault:
+    type: geometric::RRTConnectEstimate
+    range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    radius: 5.5
+    resolution: 0.005
   RRTstarkConfigDefault:
     type: geometric::RRTstar
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
@@ -136,6 +141,7 @@ larm:
     - RRTkConfigDefault
     - RRTConnectkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
@@ -164,6 +170,7 @@ rarm:
     - RRTkConfigDefault
     - RRTConnectkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
@@ -192,6 +199,7 @@ both_arms:
     - RRTkConfigDefault
     - RRTConnectkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
@@ -220,6 +228,7 @@ hole_body:
     - RRTkConfigDefault
     - RRTConnectkConfigDefault
     - RRTEstimatekConfigDefault
+    - RRTConnectEstimatekConfigDefault
     - RRTstarkConfigDefault
     - TRRTkConfigDefault
     - PRMkConfigDefault
