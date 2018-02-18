@@ -58,7 +58,7 @@ planner_configs:
   RRTConnectEstimatekConfigDefault:
     type: geometric::RRTConnectEstimate
     range: 0.1  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
-    radius: 5.5
+    radius: 10.0
     resolution: 0.005
   PRMkConfigDefault:
     type: geometric::PRM
