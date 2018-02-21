@@ -18,6 +18,7 @@
   <arg name="ompl_config" default="$(find motoman_moveit_config)/config/ompl_planning.yaml"/>
   <arg name="use_ompl" default="false"/>
   <arg name="use_stomp" default="false"/>
+  <arg name="moveit_warehouse_database_path" default="~/moveit_db"/>
 
 
   <!-- The planning and execution components of MoveIt! configured to -->
@@ -51,7 +52,7 @@
   </include>
 
   <!-- Run the DB server -->
-  <include file="$(find motoman_moveit_config)/launch/warehouse.launch"/>
+  <include file="$(find motoman_moveit_config)/launch/warehouse.launch">
+    <arg name="moveit_warehouse_database_path" value="$(arg moveit_warehouse_database_path)"/>
+  </include>
 </launch>
-
-
