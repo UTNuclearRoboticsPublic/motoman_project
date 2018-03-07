@@ -43,4 +43,6 @@
   <run_depend>tf</run_depend>
   <run_depend>tf_conversions</run_depend>
 
+  <run_depend>motoman_moveit</run_depend>
+  
 </package>

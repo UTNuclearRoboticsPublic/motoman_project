@@ -1,7 +1,7 @@
 <launch>
 
   <arg name="rviz_config"/>
-  <arg name="kinematics_config"/>
+  <arg name="kinematics_config" default="$(find motoman_sia5_moveit_config)/config/kinematics.yaml"/>
 
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />

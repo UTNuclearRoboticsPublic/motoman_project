@@ -6,7 +6,7 @@
   <arg name="urdf_model"/>
 
   <!-- SRDF Model name. By default we do not set the SRDF file. -->
-  <arg name="srdf_model"/>
+  <arg name="srdf_model" default="$(find motoman_sia5_moveit_config)/config/sia5.srdf"/>
 
   <!-- Joint Limits file.-->
   <arg name="joint_limits_config"/>
