@@ -48,13 +48,7 @@ target_link_libraries(move_groupe_plan_single_target_remove_octomap
   ${EIGEN_LIBRARIES}
   )
 
-
-find_package(roslaunch)
-roslaunch_add_file_check(test/sia5_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_jamming_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_jamming_and_kinectv2_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_kinectv2_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_multi_kinectv2_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_gazebo_nishida_lab_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_dhand_moveit_planning_execution_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_dhand_and_multi_kinect_moveit_planning_execution_launch_test.xml)
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()

@@ -15,16 +15,6 @@ catkin_package(
 
 add_definitions("-std=c++11")
 
-
-find_package(roslaunch)
-roslaunch_add_file_check(test/sia5_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_jamming_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_jamming_and_kinectv2_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_kinectv2_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_dhand_launch_test.xml)
-roslaunch_add_file_check(test/sia5_with_dhand_and_multi_kinect_launch_test.xml)
-
-
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
@@ -43,3 +33,8 @@ add_dependencies(motoman_control_node motoman_control_generate_messages_cpp)
 target_link_libraries(motoman_control_node
   ${catkin_LIBRARIES}
 )
+
+if (CATKIN_ENABLE_TESTING)
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+endif()

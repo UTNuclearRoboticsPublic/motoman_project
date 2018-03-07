@@ -9,6 +9,7 @@
   <url type="repository">http://github.com/Nishida-Lab/motoman_project</url>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
   <build_depend>cmake_modules</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>moveit_core</build_depend>
