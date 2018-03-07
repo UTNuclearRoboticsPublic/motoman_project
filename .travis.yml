@@ -21,7 +21,7 @@ env:
     - BEFORE_SCRIPT='./.pre_process.sh'
     - TARGET_PKGS="motoman_mh5_support motoman_sda10f_support motoman_sia20d_moveit_config motoman motoman_msgs motoman_sia10d_support motoman_sia20d_support motoman_driver motoman_sda10f_moveit_config motoman_sia10f_support motoman_sia5d_support dhand_control dhand_description dhand_driver dhand_gazebo dhand_msgs dhand_ros_pkg motoman_demo_msgs motoman_moveit motoman_sia5_moveit_plugins motoman_description motoman_cable_removal  motoman_euclidean_cluster  motoman_point_cloud motoman_viz motoman_control motoman_gazebo motoman_rviz_plugins motoman_viz_msgs motoman_demo motoman_gripper motoman_sia5_moveit_config"
   matrix:		
-    - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu 
+    - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu VERBOSE_OUTPUT=true
 install:		
   - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config		
 script:		
