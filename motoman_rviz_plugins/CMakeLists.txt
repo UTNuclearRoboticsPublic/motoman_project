@@ -67,9 +67,3 @@ install(DIRECTORY icons
 install(DIRECTORY ./src/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 FILES_MATCHING PATTERN "*.h")
-
-
-if (CATKIN_ENABLE_TESTING)
-  find_package(roslaunch REQUIRED)
-  roslaunch_add_file_check(launch)
-endif()
