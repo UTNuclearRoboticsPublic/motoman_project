@@ -19,7 +19,7 @@
         <joint name="joint_t" />
     </group>
     <group name="gripper">
-        <joint name="joint_tool0" />
+        <joint name="tool_joint" />
         <joint name="dhand_adapter_joint" />
         <joint name="dhand_base_joint" />
         <joint name="dhand_finger_base_left_joint" />
