@@ -6,26 +6,26 @@
   <xacro:include filename="$(find motoman_description)/robots/sia5/sia5_with_dhand.urdf.xacro"/>
 
   <!-- add Kinect V2 -->
-  <!-- Kinect_center -->
+  <!-- Kinect_second -->
   <!-- Link -->
-  <xacro:kinect2_link_box_v0 name="kinect_center_link"/>
-  <link name="kinect_center_rgb_optical_frame"/>
+  <xacro:kinect2_link_box_v0 name="kinect_second_link"/>
+  <link name="kinect_second_rgb_optical_frame"/>
 
   <!-- Joint -->
-  <joint name="joint_kinect_center" type="fixed">
-	<origin xyz="1.4721 0.0827 0.3932" rpy="-0.0031 0.4431 3.14" />
+  <joint name="joint_kinect_second" type="fixed">
+	<origin xyz="1.4828 0.0827 0.3932" rpy="-0.0031 0.4431 3.14" />
     <parent link="base_link"/>
-    <child link="kinect_center_link"/>
+    <child link="kinect_second_link"/>
   </joint>
 
-  <joint name="joint_rgb_kinect_center" type="fixed">
+  <joint name="joint_rgb_kinect_second" type="fixed">
     <origin rpy="${M_PI/2} ${M_PI} ${M_PI/2}"/>
-    <parent link="kinect_center_link"/>
-    <child link="kinect_center_rgb_optical_frame"/>
+    <parent link="kinect_second_link"/>
+    <child link="kinect_second_rgb_optical_frame"/>
   </joint>
 
   <!-- Gazebo -->
-  <xacro:kinect_gazebo name="kinect_center"/>
+  <xacro:kinect_gazebo name="kinect_second"/>
 
   <!-- Kinect_hand -->
   <!-- Link -->
@@ -77,12 +77,11 @@
   <!-- Joint -->
   <joint name="joint_left_right" type="fixed">
   <!-- Calibrated position -->
-  <!-- <origin xyz="-0.513 1.0085 0.756" rpy="0.0126 0.2924 -0.634" /> -->
+  <origin xyz="-0.513 1.0085 0.756" rpy="0.0126 0.2924 -0.634" />
   <!-- Test positions -->
   <!-- <origin xyz="-0.600 0.800 0.600" rpy="-0.01 0.3206 -0.4815" /> -->
   <!-- <origin xyz="-0.500 0.800 0.600" rpy="-0.01 0.3206 -0.4815" /> -->
-  <!-- <origin xyz="-0.4835 1.0027 0.7524" rpy="0.0126 0.2424 -0.6279" /> --> <!-- test state -->
-  <origin xyz="-0.485969 1.00226 0.71287" rpy="3.13765 2.87986 2.4732" /><!-- estimated state -->
+  <!-- <origin xyz="-0.4835 1.0027 0.7524" rpy="0.0126 0.2424 -0.6279" /> -->
 
     <parent link="base_link"/>
     <child link="kinect_left_link"/>
@@ -96,8 +95,5 @@
 
   <!-- Gazebo -->
   <xacro:kinect_gazebo name="kinect_left"/>
-
-
-
-
+  
 </robot>
