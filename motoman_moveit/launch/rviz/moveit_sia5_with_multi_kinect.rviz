@@ -9,8 +9,6 @@ Panels:
         - /MotionPlanning1/Planning Request1
         - /MotionPlanning1/Planned Path1
         - /BoundingBoxArray1
-        - /Marker1
-        - /Marker2
       Splitter Ratio: 0.5
     Tree Height: 721
   - Class: rviz/Selection
@@ -574,22 +572,6 @@ Visualization Manager:
       line width: 0.005
       only edge: false
       show coords: true
-    - Class: rviz/Marker
-      Enabled: true
-      Marker Topic: /remove_area
-      Name: Marker
-      Namespaces:
-        basic_shapes: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/Marker
-      Enabled: true
-      Marker Topic: /cable
-      Name: Marker
-      Namespaces:
-        points_and_lines: true
-      Queue Size: 100
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
