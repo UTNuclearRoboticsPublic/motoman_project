@@ -1,27 +1,15 @@
-# Motoman Project [![Build Status](https://travis-ci.org/Nishida-Lab/motoman_project.svg?branch)](https://travis-ci.org/Nishida-Lab/motoman_project) [![Slack](https://img.shields.io/badge/slack-nishida--lab-dda0dd.svg)](http://nishida-lab.slack.com)
+# To launch the jogging simulation:
 
-![SIA5](.image/sia5.png)
-## Installation
-* [Japanese](https://github.com/Nishida-Lab/motoman_project/wiki/Installation-%5BJapanese%5D)
-* [English](https://github.com/Nishida-Lab/motoman_project/wiki/Installation-%5BEnglish%5D)
+Clone this package and UT-NRG's jog_arm package and build everything.
 
-## Usage
-### Gazebo
-* [Japanese](https://github.com/Nishida-Lab/motoman_project/wiki/Gazebo-%5BJapanese%5D)
+Launch the SIA5 simulation:
 
-[![SIA5_gazebo](.image/gazebo_youtube.png)](http://www.youtube.com/watch?v=FJFXUtZzpJA)
+```roslaunch motoman\_gazebo sia5\_gazebo\_nishida\_lab.launch```
 
-### MoveIt!
-* [Japanese](https://github.com/Nishida-Lab/motoman_project/wiki/MoveIt!-%5BJapanese%5D)
+```roslaunch motoman\_moveit sia5\_gazebo\_nishida\_lab\_moveit\_planning\_execution.launch```
 
-#### Control Real Robot using MotoROS + Moveit!
-[![img](.image/moveit_youtube.png)](https://youtu.be/WvK1FSl2GSg)
+Move to a nonsingular starting position.
 
-#### Motion planning from merged point cloud
-[![img](.image/multi_kinect_youtube.png)](https://youtu.be/WFr2TgGqnDg)
+Launch the jogger:
 
-## About `rosaddress` command
-* [Japanese](https://github.com/Nishida-Lab/motoman_project/wiki/About-rosaddress-command-%5BJapanese%5D)
-
-## motoman_project Wiki Page
-[https://github.com/Nishida-Lab/motoman_project/wiki](https://github.com/Nishida-Lab/motoman_project/wiki)
+```roslaunch jog\_arm jog\_with\_spacenav.launch```
